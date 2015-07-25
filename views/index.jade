@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  div(id='app-container')
+    div(class='container-fluid')
+      form(
+        class='navbar-form navbar-left'
+        role='search'
+      ) 
+        div(
+          class='form-group'
+          id='search-form-control'
+        )
+          input(
+            id='search-text'
+            type='text'
+            placeholder='e.g. pizza'
+            class='form-control'
+          )
+        button(
+          id='search-button'
+          class='btn btn-default'
+        ) Search
+
+  div(id='map-canvas')
+
+  div(id='search-result-container')
+    ul(id='search-result-list')
+
+  script(
+    type='text/template'
+    id='place-template'
+  )

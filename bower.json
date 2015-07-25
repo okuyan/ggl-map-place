@@ -1,0 +1,21 @@
+{
+  "name": "ggl-map-place",
+  "version": "0.0.0",
+  "authors": [
+    "okuyan <yukookuyama@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "underscore": "~1.8.3",
+    "jquery": "~2.1.4",
+    "backbone": "~1.2.1",
+    "bootstrap": "~3.3.5"
+  }
+}
