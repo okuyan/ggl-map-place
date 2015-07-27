@@ -14,7 +14,7 @@ var App = Backbone.View.extend({
     markers: [],
     
     mapOptions: {
-      zoom: 12
+      zoom: 14
     },
     
     el: '#app-container',
@@ -25,7 +25,6 @@ var App = Backbone.View.extend({
     },
     
     initialize: function() {
-console.log(google.maps);
 
       this.map = new google.maps.Map(document.getElementById('map-canvas'), this.mapOptions);
       
@@ -47,6 +46,10 @@ console.log(google.maps);
     geolocationSuccess: function(position) {
       this.pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       this.map.setCenter(this.pos); 
+      
+      google.maps.event.addListener(this.map, 'center_changed', _.bind(function() {
+        this.pos = this.map.getCenter();
+      }, this));
     },
     
     
@@ -65,7 +68,7 @@ console.log(google.maps);
     
     onKeydown: function(e) {
       if (e.keyCode === 13) {
-        this.search();
+        this.search(e);
       }
     },
     
